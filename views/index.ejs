@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <% include par/head %>
+  <body>
+      <div class="container-fluid">
+      <div class="row">
+      <div class="col bg-blue">
+      <br>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-1 bg-red"></div>
+<div class="col-md-10 bg-blue">
+    <h1><%= title %></h1>
+    <div class="badge badge-info">
+after
+    </div>
+
+<script src="https://unpkg.com/wavesurfer.js"></script>
+
+<div id="ws"></div>
+<button id="play">play</button>
+<button id="stop">stop</button>
+<button id="pause">pause</button>
+
+<script>
+
+$(function(){
+var ws = WaveSurfer.create({
+    container: '#ws',
+    waveColor: 'violet',
+    progressColor: 'purple',
+    barHeight:1,
+    height:250
+});
+ws.load('mp3/1.mp3');
+
+$("#play").on('click', function () {
+ws.play();
+});
+
+$("#stop").on('click', function () {
+ws.stop();
+});
+
+$("#pause").on('click', function () {
+ws.pause();
+});
+});
+</script>
+<br>
+<br>
+    <div class="badge badge-primary">before</div>
+
+<div id="ws2"></div>
+<button id="play2">play</button>
+<button id="stop2">stop</button>
+<button id="pause2">pause</button>
+
+<script>
+
+$(function(){
+var ws = WaveSurfer.create({
+    container: '#ws2',
+    waveColor: 'blue',
+    progressColor: 'purple',
+    barHeight:1,
+    height:250
+});
+ws.load('org/1.mp3');
+
+$("#play2").on('click', function () {
+ws.play();
+});
+
+$("#stop2").on('click', function () {
+ws.stop();
+});
+
+$("#pause2").on('click', function () {
+ws.pause();
+});
+
+});
+</script>
+
+<br>
+<br>
+<br>
+
+</div>
+<div class="col-md-1"></div>
+
+      </div><!--row-->
+</div>
+  </body>
+</html>
